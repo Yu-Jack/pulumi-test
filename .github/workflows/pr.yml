@@ -24,6 +24,16 @@ jobs:
           stack-name: dev
           comment-on-pr: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          work-dir: ./
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+      - uses: pulumi/actions@v3
+        with:
+          command: preview 
+          stack-name: dev-2
+          comment-on-pr: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          work-dir: ./ohohoh
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
       - name: Send message to Release Channel
