@@ -26,7 +26,8 @@ jobs:
           comment-on-pr: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
           work-dir: ./
-          edit-comment-on-pr: false
+          edit-pr-comment: false
+          parallel: true
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
       - uses: pulumi/actions@v3
@@ -38,6 +39,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           work-dir: ./
           diff: true
+          parallel: true
           message: "detail"
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
@@ -46,6 +48,7 @@ jobs:
           command: preview 
           stack-name: dev-2
           comment-on-pr: true
+          parallel: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
           work-dir: ./ohohoh
         env:
