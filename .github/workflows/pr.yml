@@ -36,6 +36,7 @@ jobs:
           command: preview 
           stack-name: dev
           comment-on-pr: true
+          edit-pr-comment: false
           github-token: ${{ secrets.GITHUB_TOKEN }}
           work-dir: ./
           diff: true
@@ -48,6 +49,7 @@ jobs:
           command: preview 
           stack-name: dev-2
           comment-on-pr: true
+          edit-pr-comment: false
           parallel: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
           work-dir: ./ohohoh
