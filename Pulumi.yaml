@@ -1,0 +1,4 @@
+name: pulumi-test
+runtime: 
+  name: nodejs
+description: A minimal AWS TypeScript Pulumi program
