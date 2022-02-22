@@ -20,7 +20,7 @@ jobs:
       - run: npm install
       - uses: pulumi/actions@v3
         with:
-          command: preview
+          command: preview --show-replacement-steps 
           stack-name: dev
           comment-on-pr: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
