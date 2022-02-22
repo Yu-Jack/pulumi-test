@@ -19,6 +19,17 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - run: npm install
       - uses: pulumi/actions@v3
+        name: Preview Overall
+        with:
+          command: preview 
+          stack-name: dev
+          comment-on-pr: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          work-dir: ./
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+      - uses: pulumi/actions@v3
+        name: Preview Detail
         with:
           command: preview 
           stack-name: dev
@@ -26,6 +37,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           work-dir: ./
           diff: true
+          message: "detail"
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
       - uses: pulumi/actions@v3
